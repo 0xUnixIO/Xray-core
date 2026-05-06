@@ -13,7 +13,7 @@ import (
 
 	"golang.org/x/sys/windows"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/errors"
 )
 
 const (

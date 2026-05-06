@@ -15,9 +15,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/transport/internet/finalmask"
+	"github.com/0xUnixIO/Xray-core/common"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/transport/internet/finalmask"
 )
 
 const (

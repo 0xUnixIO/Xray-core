@@ -4,9 +4,9 @@ import (
 	"io"
 	"time"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/features/stats"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/signal"
+	"github.com/0xUnixIO/Xray-core/features/stats"
 )
 
 type dataHandler func(MultiBuffer)

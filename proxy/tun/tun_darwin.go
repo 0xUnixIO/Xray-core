@@ -11,8 +11,8 @@ import (
 	"strconv"
 	"unsafe"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/platform"
+	"github.com/0xUnixIO/Xray-core/common/buf"
+	"github.com/0xUnixIO/Xray-core/common/platform"
 	"golang.org/x/sys/unix"
 	"gvisor.dev/gvisor/pkg/buffer"
 	"gvisor.dev/gvisor/pkg/tcpip"

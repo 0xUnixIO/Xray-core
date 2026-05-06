@@ -5,11 +5,11 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/transport/internet/browser_dialer"
-	"github.com/xtls/xray-core/transport/internet/websocket"
+	"github.com/0xUnixIO/Xray-core/common/buf"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/net"
+	"github.com/0xUnixIO/Xray-core/transport/internet/browser_dialer"
+	"github.com/0xUnixIO/Xray-core/transport/internet/websocket"
 )
 
 // BrowserDialerClient implements splithttp.DialerClient in terms of browser dialer

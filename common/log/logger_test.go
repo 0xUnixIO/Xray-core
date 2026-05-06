@@ -6,9 +6,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	. "github.com/xtls/xray-core/common/log"
+	"github.com/0xUnixIO/Xray-core/common"
+	"github.com/0xUnixIO/Xray-core/common/buf"
+	. "github.com/0xUnixIO/Xray-core/common/log"
 )
 
 func TestFileLogger(t *testing.T) {

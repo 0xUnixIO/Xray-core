@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	. "github.com/xtls/xray-core/common/geodata/strmatcher"
+	. "github.com/0xUnixIO/Xray-core/common/geodata/strmatcher"
 )
 
 func TestFullMatcherSet(t *testing.T) {

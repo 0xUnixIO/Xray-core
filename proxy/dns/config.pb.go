@@ -7,8 +7,8 @@
 package dns
 
 import (
-	geodata "github.com/xtls/xray-core/common/geodata"
-	net "github.com/xtls/xray-core/common/net"
+	geodata "github.com/0xUnixIO/Xray-core/common/geodata"
+	net "github.com/0xUnixIO/Xray-core/common/net"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -218,7 +218,7 @@ const file_proxy_dns_config_proto_rawDesc = "" +
 	"\x06Reject\x10\x02\x12\n" +
 	"\n" +
 	"\x06Hijack\x10\x03BL\n" +
-	"\x12com.xray.proxy.dnsP\x01Z#github.com/xtls/xray-core/proxy/dns\xaa\x02\x0eXray.Proxy.Dnsb\x06proto3"
+	"\x12com.xray.proxy.dnsP\x01Z#github.com/0xUnixIO/Xray-core/proxy/dns\xaa\x02\x0eXray.Proxy.Dnsb\x06proto3"
 
 var (
 	file_proxy_dns_config_proto_rawDescOnce sync.Once

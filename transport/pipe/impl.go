@@ -6,10 +6,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/buf"
-	"github.com/xtls/xray-core/common/signal"
-	"github.com/xtls/xray-core/common/signal/done"
+	"github.com/0xUnixIO/Xray-core/common"
+	"github.com/0xUnixIO/Xray-core/common/buf"
+	"github.com/0xUnixIO/Xray-core/common/signal"
+	"github.com/0xUnixIO/Xray-core/common/signal/done"
 )
 
 type state byte

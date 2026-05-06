@@ -3,9 +3,9 @@ package buf
 import (
 	"io"
 
-	"github.com/xtls/xray-core/common/bytespool"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/0xUnixIO/Xray-core/common/bytespool"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/net"
 )
 
 const (

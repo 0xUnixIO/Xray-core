@@ -4,7 +4,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/xtls/xray-core/common/crypto"
+	"github.com/0xUnixIO/Xray-core/common/crypto"
 )
 
 type fragmentConn struct {

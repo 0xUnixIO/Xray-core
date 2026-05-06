@@ -3,13 +3,13 @@ package conf_test
 import (
 	"testing"
 
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/protocol"
-	"github.com/xtls/xray-core/common/serial"
-	. "github.com/xtls/xray-core/infra/conf"
-	"github.com/xtls/xray-core/proxy/vless"
-	"github.com/xtls/xray-core/proxy/vless/inbound"
-	"github.com/xtls/xray-core/proxy/vless/outbound"
+	"github.com/0xUnixIO/Xray-core/common/net"
+	"github.com/0xUnixIO/Xray-core/common/protocol"
+	"github.com/0xUnixIO/Xray-core/common/serial"
+	. "github.com/0xUnixIO/Xray-core/infra/conf"
+	"github.com/0xUnixIO/Xray-core/proxy/vless"
+	"github.com/0xUnixIO/Xray-core/proxy/vless/inbound"
+	"github.com/0xUnixIO/Xray-core/proxy/vless/outbound"
 )
 
 func TestVLessOutbound(t *testing.T) {

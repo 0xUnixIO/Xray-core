@@ -4,8 +4,8 @@ import (
 	"encoding/binary"
 	"net"
 
-	"github.com/xtls/xray-core/common/crypto"
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/crypto"
+	"github.com/0xUnixIO/Xray-core/common/errors"
 )
 
 type evalValue struct {

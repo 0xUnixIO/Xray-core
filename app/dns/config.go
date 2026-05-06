@@ -1,10 +1,10 @@
 package dns
 
 import (
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/geodata"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/common/uuid"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/geodata"
+	"github.com/0xUnixIO/Xray-core/common/net"
+	"github.com/0xUnixIO/Xray-core/common/uuid"
 )
 
 // References:

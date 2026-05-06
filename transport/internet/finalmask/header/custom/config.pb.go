@@ -610,7 +610,7 @@ const file_transport_internet_finalmask_header_custom_config_proto_rawDesc = "" 
 	"\x06client\x18\x01 \x03(\v28.xray.transport.internet.finalmask.header.custom.UDPItemR\x06client\x12P\n" +
 	"\x06server\x18\x02 \x03(\v28.xray.transport.internet.finalmask.header.custom.UDPItemR\x06server\x12\x12\n" +
 	"\x04mode\x18\x03 \x01(\tR\x04modeB\xaf\x01\n" +
-	"3com.xray.transport.internet.finalmask.header.customP\x01ZDgithub.com/xtls/xray-core/transport/internet/finalmask/header/custom\xaa\x02/Xray.Transport.Internet.Finalmask.Header.Customb\x06proto3"
+	"3com.xray.transport.internet.finalmask.header.customP\x01ZDgithub.com/0xUnixIO/Xray-core/transport/internet/finalmask/header/custom\xaa\x02/Xray.Transport.Internet.Finalmask.Header.Customb\x06proto3"
 
 var (
 	file_transport_internet_finalmask_header_custom_config_proto_rawDescOnce sync.Once

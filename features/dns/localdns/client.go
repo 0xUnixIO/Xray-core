@@ -5,10 +5,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
-	"github.com/xtls/xray-core/features/dns"
-	"github.com/xtls/xray-core/transport/internet"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/net"
+	"github.com/0xUnixIO/Xray-core/features/dns"
+	"github.com/0xUnixIO/Xray-core/transport/internet"
 )
 
 // Client is an implementation of dns.Client, which queries localhost for DNS.

@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/xtls/xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/errors"
 )
 
 const udpStandaloneBufferSize = 4096

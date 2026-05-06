@@ -7,8 +7,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/platform/filesystem"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/platform/filesystem"
 
 	"google.golang.org/protobuf/proto"
 )

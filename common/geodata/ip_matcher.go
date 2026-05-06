@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/net"
 
 	"go4.org/netipx"
 )

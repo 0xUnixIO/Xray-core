@@ -7,8 +7,8 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/xtls/xray-core/common"
-	xnet "github.com/xtls/xray-core/common/net"
+	"github.com/0xUnixIO/Xray-core/common"
+	xnet "github.com/0xUnixIO/Xray-core/common/net"
 )
 
 func buildIPMatcher(rawRules ...string) IPMatcher {

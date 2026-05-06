@@ -6,12 +6,12 @@ import (
 	"sync"
     "strings"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/signal/done"
-	core "github.com/xtls/xray-core/core"
-	"github.com/xtls/xray-core/features/outbound"
-    "github.com/xtls/xray-core/transport/internet"
+	"github.com/0xUnixIO/Xray-core/common"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/signal/done"
+	core "github.com/0xUnixIO/Xray-core/core"
+	"github.com/0xUnixIO/Xray-core/features/outbound"
+    "github.com/0xUnixIO/Xray-core/transport/internet"
 	"google.golang.org/grpc"
 )
 

@@ -9,8 +9,8 @@ import (
 	"syscall"
 	"unsafe"
 
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/net"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/net"
 	"golang.org/x/sys/unix"
 )
 

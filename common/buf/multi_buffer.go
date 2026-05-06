@@ -3,9 +3,9 @@ package buf
 import (
 	"io"
 
-	"github.com/xtls/xray-core/common"
-	"github.com/xtls/xray-core/common/errors"
-	"github.com/xtls/xray-core/common/serial"
+	"github.com/0xUnixIO/Xray-core/common"
+	"github.com/0xUnixIO/Xray-core/common/errors"
+	"github.com/0xUnixIO/Xray-core/common/serial"
 )
 
 // ReadAllToBytes reads all content from the reader into a byte array, until EOF.
