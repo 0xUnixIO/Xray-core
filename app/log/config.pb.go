@@ -183,8 +183,8 @@ const file_app_log_config_proto_rawDesc = "" +
 	"\x04None\x10\x00\x12\v\n" +
 	"\aConsole\x10\x01\x12\b\n" +
 	"\x04File\x10\x02\x12\t\n" +
-	"\x05Event\x10\x03BI\n" +
-	"\x10com.xray.app.logP\x01Z$github.com/0xUnixIO/Xray-core/app/log\xaa\x02\fXray.App.Logb\x06proto3"
+	"\x05Event\x10\x03BJ\n" +
+	"\x10com.xray.app.logP\x01Z%github.com/0xUnixIO/Xray-core/app/log\xaa\x02\fXray.App.Logb\x06proto3"
 
 var (
 	file_app_log_config_proto_rawDescOnce sync.Once

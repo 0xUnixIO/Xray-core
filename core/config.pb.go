@@ -267,8 +267,8 @@ const file_core_config_proto_rawDesc = "" +
 	"\x0fsender_settings\x18\x02 \x01(\v2 .xray.common.serial.TypedMessageR\x0esenderSettings\x12G\n" +
 	"\x0eproxy_settings\x18\x03 \x01(\v2 .xray.common.serial.TypedMessageR\rproxySettings\x12\x16\n" +
 	"\x06expire\x18\x04 \x01(\x03R\x06expire\x12\x18\n" +
-	"\acomment\x18\x05 \x01(\tR\acommentB@\n" +
-	"\rcom.xray.coreP\x01Z!github.com/0xUnixIO/Xray-core/core\xaa\x02\tXray.Coreb\x06proto3"
+	"\acomment\x18\x05 \x01(\tR\acommentBA\n" +
+	"\rcom.xray.coreP\x01Z\"github.com/0xUnixIO/Xray-core/core\xaa\x02\tXray.Coreb\x06proto3"
 
 var (
 	file_core_config_proto_rawDescOnce sync.Once

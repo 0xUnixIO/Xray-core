@@ -1009,8 +1009,8 @@ const file_app_proxyman_command_command_proto_rawDesc = "" +
 	"\vAddOutbound\x12-.xray.app.proxyman.command.AddOutboundRequest\x1a..xray.app.proxyman.command.AddOutboundResponse\"\x00\x12w\n" +
 	"\x0eRemoveOutbound\x120.xray.app.proxyman.command.RemoveOutboundRequest\x1a1.xray.app.proxyman.command.RemoveOutboundResponse\"\x00\x12t\n" +
 	"\rAlterOutbound\x12/.xray.app.proxyman.command.AlterOutboundRequest\x1a0.xray.app.proxyman.command.AlterOutboundResponse\"\x00\x12t\n" +
-	"\rListOutbounds\x12/.xray.app.proxyman.command.ListOutboundsRequest\x1a0.xray.app.proxyman.command.ListOutboundsResponse\"\x00Bp\n" +
-	"\x1dcom.xray.app.proxyman.commandP\x01Z1github.com/0xUnixIO/Xray-core/app/proxyman/command\xaa\x02\x19Xray.App.Proxyman.Commandb\x06proto3"
+	"\rListOutbounds\x12/.xray.app.proxyman.command.ListOutboundsRequest\x1a0.xray.app.proxyman.command.ListOutboundsResponse\"\x00Bq\n" +
+	"\x1dcom.xray.app.proxyman.commandP\x01Z2github.com/0xUnixIO/Xray-core/app/proxyman/command\xaa\x02\x19Xray.App.Proxyman.Commandb\x06proto3"
 
 var (
 	file_app_proxyman_command_command_proto_rawDescOnce sync.Once

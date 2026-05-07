@@ -320,8 +320,8 @@ const file_transport_internet_reality_config_proto_rawDesc = "" +
 	"\vafter_bytes\x18\x01 \x01(\x04R\n" +
 	"afterBytes\x12\"\n" +
 	"\rbytes_per_sec\x18\x02 \x01(\x04R\vbytesPerSec\x12-\n" +
-	"\x13burst_bytes_per_sec\x18\x03 \x01(\x04R\x10burstBytesPerSecB\x82\x01\n" +
-	"#com.xray.transport.internet.realityP\x01Z7github.com/0xUnixIO/Xray-core/transport/internet/reality\xaa\x02\x1fXray.Transport.Internet.Realityb\x06proto3"
+	"\x13burst_bytes_per_sec\x18\x03 \x01(\x04R\x10burstBytesPerSecB\x83\x01\n" +
+	"#com.xray.transport.internet.realityP\x01Z8github.com/0xUnixIO/Xray-core/transport/internet/reality\xaa\x02\x1fXray.Transport.Internet.Realityb\x06proto3"
 
 var (
 	file_transport_internet_reality_config_proto_rawDescOnce sync.Once

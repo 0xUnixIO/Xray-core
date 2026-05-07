@@ -81,8 +81,8 @@ const file_transport_internet_tcp_config_proto_rawDesc = "" +
 	"#transport/internet/tcp/config.proto\x12\x1bxray.transport.internet.tcp\x1a!common/serial/typed_message.proto\"\x8d\x01\n" +
 	"\x06Config\x12I\n" +
 	"\x0fheader_settings\x18\x02 \x01(\v2 .xray.common.serial.TypedMessageR\x0eheaderSettings\x122\n" +
-	"\x15accept_proxy_protocol\x18\x03 \x01(\bR\x13acceptProxyProtocolJ\x04\b\x01\x10\x02Bv\n" +
-	"\x1fcom.xray.transport.internet.tcpP\x01Z3github.com/0xUnixIO/Xray-core/transport/internet/tcp\xaa\x02\x1bXray.Transport.Internet.Tcpb\x06proto3"
+	"\x15accept_proxy_protocol\x18\x03 \x01(\bR\x13acceptProxyProtocolJ\x04\b\x01\x10\x02Bw\n" +
+	"\x1fcom.xray.transport.internet.tcpP\x01Z4github.com/0xUnixIO/Xray-core/transport/internet/tcp\xaa\x02\x1bXray.Transport.Internet.Tcpb\x06proto3"
 
 var (
 	file_transport_internet_tcp_config_proto_rawDescOnce sync.Once

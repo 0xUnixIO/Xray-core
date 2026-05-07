@@ -294,8 +294,8 @@ const file_proxy_wireguard_config_proto_rawDesc = "" +
 	"\n" +
 	"FORCE_IP46\x10\x03\x12\x0e\n" +
 	"\n" +
-	"FORCE_IP64\x10\x04Ba\n" +
-	"\x18com.xray.proxy.wireguardP\x01Z,github.com/0xUnixIO/Xray-core/proxy/wireguard\xaa\x02\x14Xray.Proxy.WireGuardb\x06proto3"
+	"FORCE_IP64\x10\x04Bb\n" +
+	"\x18com.xray.proxy.wireguardP\x01Z-github.com/0xUnixIO/Xray-core/proxy/wireguard\xaa\x02\x14Xray.Proxy.WireGuardb\x06proto3"
 
 var (
 	file_proxy_wireguard_config_proto_rawDescOnce sync.Once

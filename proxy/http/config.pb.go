@@ -262,8 +262,8 @@ const file_proxy_http_config_proto_rawDesc = "" +
 	"\x05value\x18\x02 \x01(\tR\x05value\"}\n" +
 	"\fClientConfig\x12<\n" +
 	"\x06server\x18\x01 \x01(\v2$.xray.common.protocol.ServerEndpointR\x06server\x12/\n" +
-	"\x06header\x18\x02 \x03(\v2\x17.xray.proxy.http.HeaderR\x06headerBR\n" +
-	"\x13com.xray.proxy.httpP\x01Z'github.com/0xUnixIO/Xray-core/proxy/http\xaa\x02\x0fXray.Proxy.Httpb\x06proto3"
+	"\x06header\x18\x02 \x03(\v2\x17.xray.proxy.http.HeaderR\x06headerBS\n" +
+	"\x13com.xray.proxy.httpP\x01Z(github.com/0xUnixIO/Xray-core/proxy/http\xaa\x02\x0fXray.Proxy.Httpb\x06proto3"
 
 var (
 	file_proxy_http_config_proto_rawDescOnce sync.Once

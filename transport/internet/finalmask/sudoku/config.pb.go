@@ -118,8 +118,8 @@ const file_transport_internet_finalmask_sudoku_config_proto_rawDesc = "" +
 	"paddingMin\x12\x1f\n" +
 	"\vpadding_max\x18\x05 \x01(\rR\n" +
 	"paddingMax\x12#\n" +
-	"\rcustom_tables\x18\a \x03(\tR\fcustomTablesB\x9d\x01\n" +
-	",com.xray.transport.internet.finalmask.sudokuP\x01Z@github.com/0xUnixIO/Xray-core/transport/internet/finalmask/sudoku\xaa\x02(Xray.Transport.Internet.Finalmask.Sudokub\x06proto3"
+	"\rcustom_tables\x18\a \x03(\tR\fcustomTablesB\x9e\x01\n" +
+	",com.xray.transport.internet.finalmask.sudokuP\x01ZAgithub.com/0xUnixIO/Xray-core/transport/internet/finalmask/sudoku\xaa\x02(Xray.Transport.Internet.Finalmask.Sudokub\x06proto3"
 
 var (
 	file_transport_internet_finalmask_sudoku_config_proto_rawDescOnce sync.Once

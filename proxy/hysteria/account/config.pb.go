@@ -71,8 +71,8 @@ const file_proxy_hysteria_account_config_proto_rawDesc = "" +
 	"\n" +
 	"#proxy/hysteria/account/config.proto\x12\x1bxray.proxy.hysteria.account\"\x1d\n" +
 	"\aAccount\x12\x12\n" +
-	"\x04auth\x18\x01 \x01(\tR\x04authBv\n" +
-	"\x1fcom.xray.proxy.hysteria.accountP\x01Z3github.com/0xUnixIO/Xray-core/proxy/hysteria/account\xaa\x02\x1bXray.Proxy.Hysteria.Accountb\x06proto3"
+	"\x04auth\x18\x01 \x01(\tR\x04authBw\n" +
+	"\x1fcom.xray.proxy.hysteria.accountP\x01Z4github.com/0xUnixIO/Xray-core/proxy/hysteria/account\xaa\x02\x1bXray.Proxy.Hysteria.Accountb\x06proto3"
 
 var (
 	file_proxy_hysteria_account_config_proto_rawDescOnce sync.Once

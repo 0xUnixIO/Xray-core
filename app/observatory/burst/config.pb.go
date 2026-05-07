@@ -182,8 +182,8 @@ const file_app_observatory_burst_config_proto_rawDesc = "" +
 	"\atimeout\x18\x05 \x01(\x03R\atimeout\x12\x1e\n" +
 	"\n" +
 	"httpMethod\x18\x06 \x01(\tR\n" +
-	"httpMethodBs\n" +
-	"\x1ecom.xray.app.observatory.burstP\x01Z2github.com/0xUnixIO/Xray-core/app/observatory/burst\xaa\x02\x1aXray.App.Observatory.Burstb\x06proto3"
+	"httpMethodBt\n" +
+	"\x1ecom.xray.app.observatory.burstP\x01Z3github.com/0xUnixIO/Xray-core/app/observatory/burst\xaa\x02\x1aXray.App.Observatory.Burstb\x06proto3"
 
 var (
 	file_app_observatory_burst_config_proto_rawDescOnce sync.Once

@@ -72,8 +72,8 @@ const file_proxy_loopback_config_proto_rawDesc = "" +
 	"\x1bproxy/loopback/config.proto\x12\x13xray.proxy.loopback\")\n" +
 	"\x06Config\x12\x1f\n" +
 	"\vinbound_tag\x18\x01 \x01(\tR\n" +
-	"inboundTagB^\n" +
-	"\x17com.xray.proxy.loopbackP\x01Z+github.com/0xUnixIO/Xray-core/proxy/loopback\xaa\x02\x13Xray.Proxy.Loopbackb\x06proto3"
+	"inboundTagB_\n" +
+	"\x17com.xray.proxy.loopbackP\x01Z,github.com/0xUnixIO/Xray-core/proxy/loopback\xaa\x02\x13Xray.Proxy.Loopbackb\x06proto3"
 
 var (
 	file_proxy_loopback_config_proto_rawDescOnce sync.Once

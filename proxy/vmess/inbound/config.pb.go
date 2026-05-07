@@ -173,8 +173,8 @@ const file_proxy_vmess_inbound_config_proto_rawDesc = "" +
 	"\x05level\x18\x02 \x01(\rR\x05level\"{\n" +
 	"\x06Config\x12.\n" +
 	"\x04user\x18\x01 \x03(\v2\x1a.xray.common.protocol.UserR\x04user\x12A\n" +
-	"\adefault\x18\x02 \x01(\v2'.xray.proxy.vmess.inbound.DefaultConfigR\adefaultBm\n" +
-	"\x1ccom.xray.proxy.vmess.inboundP\x01Z0github.com/0xUnixIO/Xray-core/proxy/vmess/inbound\xaa\x02\x18Xray.Proxy.Vmess.Inboundb\x06proto3"
+	"\adefault\x18\x02 \x01(\v2'.xray.proxy.vmess.inbound.DefaultConfigR\adefaultBn\n" +
+	"\x1ccom.xray.proxy.vmess.inboundP\x01Z1github.com/0xUnixIO/Xray-core/proxy/vmess/inbound\xaa\x02\x18Xray.Proxy.Vmess.Inboundb\x06proto3"
 
 var (
 	file_proxy_vmess_inbound_config_proto_rawDescOnce sync.Once

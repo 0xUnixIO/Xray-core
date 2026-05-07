@@ -90,8 +90,8 @@ const file_common_protocol_server_spec_proto_rawDesc = "" +
 	"\x0eServerEndpoint\x125\n" +
 	"\aaddress\x18\x01 \x01(\v2\x1b.xray.common.net.IPOrDomainR\aaddress\x12\x12\n" +
 	"\x04port\x18\x02 \x01(\rR\x04port\x12.\n" +
-	"\x04user\x18\x03 \x01(\v2\x1a.xray.common.protocol.UserR\x04userBa\n" +
-	"\x18com.xray.common.protocolP\x01Z,github.com/0xUnixIO/Xray-core/common/protocol\xaa\x02\x14Xray.Common.Protocolb\x06proto3"
+	"\x04user\x18\x03 \x01(\v2\x1a.xray.common.protocol.UserR\x04userBb\n" +
+	"\x18com.xray.common.protocolP\x01Z-github.com/0xUnixIO/Xray-core/common/protocol\xaa\x02\x14Xray.Common.Protocolb\x06proto3"
 
 var (
 	file_common_protocol_server_spec_proto_rawDescOnce sync.Once

@@ -126,8 +126,8 @@ const file_proxy_tun_config_proto_rawDesc = "" +
 	"\n" +
 	"user_level\x18\x05 \x01(\rR\tuserLevel\x129\n" +
 	"\x19auto_system_routing_table\x18\x06 \x03(\tR\x16autoSystemRoutingTable\x128\n" +
-	"\x18auto_outbounds_interface\x18\a \x01(\tR\x16autoOutboundsInterfaceBO\n" +
-	"\x12com.xray.proxy.tunP\x01Z&github.com/0xUnixIO/Xray-core/proxy/tun\xaa\x02\x0eXray.Proxy.Tunb\x06proto3"
+	"\x18auto_outbounds_interface\x18\a \x01(\tR\x16autoOutboundsInterfaceBP\n" +
+	"\x12com.xray.proxy.tunP\x01Z'github.com/0xUnixIO/Xray-core/proxy/tun\xaa\x02\x0eXray.Proxy.Tunb\x06proto3"
 
 var (
 	file_proxy_tun_config_proto_rawDescOnce sync.Once

@@ -146,8 +146,8 @@ const file_proxy_blackhole_config_proto_rawDesc = "" +
 	"\fNoneResponse\"\x0e\n" +
 	"\fHTTPResponse\"F\n" +
 	"\x06Config\x12<\n" +
-	"\bresponse\x18\x01 \x01(\v2 .xray.common.serial.TypedMessageR\bresponseBa\n" +
-	"\x18com.xray.proxy.blackholeP\x01Z,github.com/0xUnixIO/Xray-core/proxy/blackhole\xaa\x02\x14Xray.Proxy.Blackholeb\x06proto3"
+	"\bresponse\x18\x01 \x01(\v2 .xray.common.serial.TypedMessageR\bresponseBb\n" +
+	"\x18com.xray.proxy.blackholeP\x01Z-github.com/0xUnixIO/Xray-core/proxy/blackhole\xaa\x02\x14Xray.Proxy.Blackholeb\x06proto3"
 
 var (
 	file_proxy_blackhole_config_proto_rawDescOnce sync.Once

@@ -72,8 +72,8 @@ const file_proxy_vless_outbound_config_proto_rawDesc = "" +
 	"\n" +
 	"!proxy/vless/outbound/config.proto\x12\x19xray.proxy.vless.outbound\x1a!common/protocol/server_spec.proto\"D\n" +
 	"\x06Config\x12:\n" +
-	"\x05vnext\x18\x01 \x01(\v2$.xray.common.protocol.ServerEndpointR\x05vnextBp\n" +
-	"\x1dcom.xray.proxy.vless.outboundP\x01Z1github.com/0xUnixIO/Xray-core/proxy/vless/outbound\xaa\x02\x19Xray.Proxy.Vless.Outboundb\x06proto3"
+	"\x05vnext\x18\x01 \x01(\v2$.xray.common.protocol.ServerEndpointR\x05vnextBq\n" +
+	"\x1dcom.xray.proxy.vless.outboundP\x01Z2github.com/0xUnixIO/Xray-core/proxy/vless/outbound\xaa\x02\x19Xray.Proxy.Vless.Outboundb\x06proto3"
 
 var (
 	file_proxy_vless_outbound_config_proto_rawDescOnce sync.Once

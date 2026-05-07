@@ -459,8 +459,8 @@ const file_transport_internet_splithttp_config_proto_rawDesc = "" +
 	"\x14serverMaxHeaderBytes\x18\x1b \x01(\x05R\x14serverMaxHeaderBytes\x1a:\n" +
 	"\fHeadersEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x88\x01\n" +
-	"%com.xray.transport.internet.splithttpP\x01Z9github.com/0xUnixIO/Xray-core/transport/internet/splithttp\xaa\x02!Xray.Transport.Internet.SplitHttpb\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x89\x01\n" +
+	"%com.xray.transport.internet.splithttpP\x01Z:github.com/0xUnixIO/Xray-core/transport/internet/splithttp\xaa\x02!Xray.Transport.Internet.SplitHttpb\x06proto3"
 
 var (
 	file_transport_internet_splithttp_config_proto_rawDescOnce sync.Once

@@ -122,8 +122,8 @@ const file_proxy_dokodemo_config_proto_rawDesc = "" +
 	"user_level\x18\x06 \x01(\rR\tuserLevel\x1a:\n" +
 	"\fPortMapEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B^\n" +
-	"\x17com.xray.proxy.dokodemoP\x01Z+github.com/0xUnixIO/Xray-core/proxy/dokodemo\xaa\x02\x13Xray.Proxy.Dokodemob\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B_\n" +
+	"\x17com.xray.proxy.dokodemoP\x01Z,github.com/0xUnixIO/Xray-core/proxy/dokodemo\xaa\x02\x13Xray.Proxy.Dokodemob\x06proto3"
 
 var (
 	file_proxy_dokodemo_config_proto_rawDescOnce sync.Once

@@ -203,8 +203,8 @@ const file_proxy_vless_account_proto_rawDesc = "" +
 	"\apadding\x18\x06 \x01(\tR\apadding\x123\n" +
 	"\areverse\x18\a \x01(\v2\x19.xray.proxy.vless.ReverseR\areverse\x12\x18\n" +
 	"\atestpre\x18\b \x01(\rR\atestpre\x12\x1a\n" +
-	"\btestseed\x18\t \x03(\rR\btestseedBU\n" +
-	"\x14com.xray.proxy.vlessP\x01Z(github.com/0xUnixIO/Xray-core/proxy/vless\xaa\x02\x10Xray.Proxy.Vlessb\x06proto3"
+	"\btestseed\x18\t \x03(\rR\btestseedBV\n" +
+	"\x14com.xray.proxy.vlessP\x01Z)github.com/0xUnixIO/Xray-core/proxy/vless\xaa\x02\x10Xray.Proxy.Vlessb\x06proto3"
 
 var (
 	file_proxy_vless_account_proto_rawDescOnce sync.Once

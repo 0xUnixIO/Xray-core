@@ -71,8 +71,8 @@ const file_transport_internet_finalmask_header_dns_config_proto_rawDesc = "" +
 	"\n" +
 	"4transport/internet/finalmask/header/dns/config.proto\x12,xray.transport.internet.finalmask.header.dns\" \n" +
 	"\x06Config\x12\x16\n" +
-	"\x06domain\x18\x01 \x01(\tR\x06domainB\xa9\x01\n" +
-	"0com.xray.transport.internet.finalmask.header.dnsP\x01ZDgithub.com/0xUnixIO/Xray-core/transport/internet/finalmask/header/dns\xaa\x02,Xray.Transport.Internet.Finalmask.Header.Dnsb\x06proto3"
+	"\x06domain\x18\x01 \x01(\tR\x06domainB\xaa\x01\n" +
+	"0com.xray.transport.internet.finalmask.header.dnsP\x01ZEgithub.com/0xUnixIO/Xray-core/transport/internet/finalmask/header/dns\xaa\x02,Xray.Transport.Internet.Finalmask.Header.Dnsb\x06proto3"
 
 var (
 	file_transport_internet_finalmask_header_dns_config_proto_rawDescOnce sync.Once

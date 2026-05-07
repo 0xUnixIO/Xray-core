@@ -62,8 +62,8 @@ var File_transport_internet_finalmask_header_dtls_config_proto protoreflect.File
 const file_transport_internet_finalmask_header_dtls_config_proto_rawDesc = "" +
 	"\n" +
 	"5transport/internet/finalmask/header/dtls/config.proto\x12-xray.transport.internet.finalmask.header.dtls\"\b\n" +
-	"\x06ConfigB\xac\x01\n" +
-	"1com.xray.transport.internet.finalmask.header.dtlsP\x01ZEgithub.com/0xUnixIO/Xray-core/transport/internet/finalmask/header/dtls\xaa\x02-Xray.Transport.Internet.Finalmask.Header.Dtlsb\x06proto3"
+	"\x06ConfigB\xad\x01\n" +
+	"1com.xray.transport.internet.finalmask.header.dtlsP\x01ZFgithub.com/0xUnixIO/Xray-core/transport/internet/finalmask/header/dtls\xaa\x02-Xray.Transport.Internet.Finalmask.Header.Dtlsb\x06proto3"
 
 var (
 	file_transport_internet_finalmask_header_dtls_config_proto_rawDescOnce sync.Once

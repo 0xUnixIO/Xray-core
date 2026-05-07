@@ -119,8 +119,8 @@ const file_transport_internet_websocket_config_proto_rawDesc = "" +
 	"\x0fheartbeatPeriod\x18\x06 \x01(\rR\x0fheartbeatPeriod\x1a9\n" +
 	"\vHeaderEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x88\x01\n" +
-	"%com.xray.transport.internet.websocketP\x01Z9github.com/0xUnixIO/Xray-core/transport/internet/websocket\xaa\x02!Xray.Transport.Internet.Websocketb\x06proto3"
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x89\x01\n" +
+	"%com.xray.transport.internet.websocketP\x01Z:github.com/0xUnixIO/Xray-core/transport/internet/websocket\xaa\x02!Xray.Transport.Internet.Websocketb\x06proto3"
 
 var (
 	file_transport_internet_websocket_config_proto_rawDescOnce sync.Once

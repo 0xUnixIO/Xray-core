@@ -490,8 +490,8 @@ const file_app_dns_config_proto_rawDesc = "" +
 	"\x06USE_IP\x10\x00\x12\v\n" +
 	"\aUSE_IP4\x10\x01\x12\v\n" +
 	"\aUSE_IP6\x10\x02\x12\v\n" +
-	"\aUSE_SYS\x10\x03BI\n" +
-	"\x10com.xray.app.dnsP\x01Z$github.com/0xUnixIO/Xray-core/app/dns\xaa\x02\fXray.App.Dnsb\x06proto3"
+	"\aUSE_SYS\x10\x03BJ\n" +
+	"\x10com.xray.app.dnsP\x01Z%github.com/0xUnixIO/Xray-core/app/dns\xaa\x02\fXray.App.Dnsb\x06proto3"
 
 var (
 	file_app_dns_config_proto_rawDescOnce sync.Once

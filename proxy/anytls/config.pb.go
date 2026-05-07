@@ -220,8 +220,8 @@ const file_proxy_anytls_config_proto_rawDesc = "" +
 	"\bpassword\x18\x03 \x01(\tR\bpassword\x12=\n" +
 	"\x1bidle_session_check_interval\x18\x04 \x01(\x03R\x18idleSessionCheckInterval\x120\n" +
 	"\x14idle_session_timeout\x18\x05 \x01(\x03R\x12idleSessionTimeout\x12(\n" +
-	"\x10min_idle_session\x18\x06 \x01(\x05R\x0eminIdleSessionBX\n" +
-	"\x15com.xray.proxy.anytlsP\x01Z)github.com/0xUnixIO/Xray-core/proxy/anytls\xaa\x02\x11Xray.Proxy.AnyTLSb\x06proto3"
+	"\x10min_idle_session\x18\x06 \x01(\x05R\x0eminIdleSessionBY\n" +
+	"\x15com.xray.proxy.anytlsP\x01Z*github.com/0xUnixIO/Xray-core/proxy/anytls\xaa\x02\x11Xray.Proxy.AnyTLSb\x06proto3"
 
 var (
 	file_proxy_anytls_config_proto_rawDescOnce sync.Once

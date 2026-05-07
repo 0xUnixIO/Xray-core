@@ -201,10 +201,11 @@ type Config struct {
 	RejectUnknownSni bool   `protobuf:"varint,12,opt,name=reject_unknown_sni,json=rejectUnknownSni,proto3" json:"reject_unknown_sni,omitempty"`
 	MasterKeyLog     string `protobuf:"bytes,15,opt,name=master_key_log,json=masterKeyLog,proto3" json:"master_key_log,omitempty"`
 	// Lists of string as CurvePreferences values.
-	CurvePreferences     []string               `protobuf:"bytes,16,rep,name=curve_preferences,json=curvePreferences,proto3" json:"curve_preferences,omitempty"`
-	VerifyPeerCertByName []string               `protobuf:"bytes,17,rep,name=verify_peer_cert_by_name,json=verifyPeerCertByName,proto3" json:"verify_peer_cert_by_name,omitempty"`
-	EchServerKeys        []byte                 `protobuf:"bytes,18,opt,name=ech_server_keys,json=echServerKeys,proto3" json:"ech_server_keys,omitempty"`
-	EchConfigList        string                 `protobuf:"bytes,19,opt,name=ech_config_list,json=echConfigList,proto3" json:"ech_config_list,omitempty"`
+	CurvePreferences     []string `protobuf:"bytes,16,rep,name=curve_preferences,json=curvePreferences,proto3" json:"curve_preferences,omitempty"`
+	VerifyPeerCertByName []string `protobuf:"bytes,17,rep,name=verify_peer_cert_by_name,json=verifyPeerCertByName,proto3" json:"verify_peer_cert_by_name,omitempty"`
+	EchServerKeys        []byte   `protobuf:"bytes,18,opt,name=ech_server_keys,json=echServerKeys,proto3" json:"ech_server_keys,omitempty"`
+	EchConfigList        string   `protobuf:"bytes,19,opt,name=ech_config_list,json=echConfigList,proto3" json:"ech_config_list,omitempty"`
+	// Deprecated
 	EchForceQuery        string                 `protobuf:"bytes,20,opt,name=ech_force_query,json=echForceQuery,proto3" json:"ech_force_query,omitempty"`
 	EchSocketSettings    *internet.SocketConfig `protobuf:"bytes,21,opt,name=ech_socket_settings,json=echSocketSettings,proto3" json:"ech_socket_settings,omitempty"`
 	PinnedPeerCertSha256 [][]byte               `protobuf:"bytes,22,rep,name=pinned_peer_cert_sha256,json=pinnedPeerCertSha256,proto3" json:"pinned_peer_cert_sha256,omitempty"`
@@ -416,8 +417,8 @@ const file_transport_internet_tls_config_proto_rawDesc = "" +
 	"\x0fech_config_list\x18\x13 \x01(\tR\rechConfigList\x12&\n" +
 	"\x0fech_force_query\x18\x14 \x01(\tR\rechForceQuery\x12U\n" +
 	"\x13ech_socket_settings\x18\x15 \x01(\v2%.xray.transport.internet.SocketConfigR\x11echSocketSettings\x125\n" +
-	"\x17pinned_peer_cert_sha256\x18\x16 \x03(\fR\x14pinnedPeerCertSha256Bv\n" +
-	"\x1fcom.xray.transport.internet.tlsP\x01Z3github.com/0xUnixIO/Xray-core/transport/internet/tls\xaa\x02\x1bXray.Transport.Internet.Tlsb\x06proto3"
+	"\x17pinned_peer_cert_sha256\x18\x16 \x03(\fR\x14pinnedPeerCertSha256Bw\n" +
+	"\x1fcom.xray.transport.internet.tlsP\x01Z4github.com/0xUnixIO/Xray-core/transport/internet/tls\xaa\x02\x1bXray.Transport.Internet.Tlsb\x06proto3"
 
 var (
 	file_transport_internet_tls_config_proto_rawDescOnce sync.Once
