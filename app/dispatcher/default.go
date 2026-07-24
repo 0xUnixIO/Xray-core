@@ -8,6 +8,8 @@ import (
 
 	"github.com/0xUnixIO/Xray-core/common"
 	"github.com/0xUnixIO/Xray-core/common/buf"
+	"github.com/0xUnixIO/Xray-core/common/conntrack"
+	c "github.com/0xUnixIO/Xray-core/common/ctx"
 	"github.com/0xUnixIO/Xray-core/common/errors"
 	"github.com/0xUnixIO/Xray-core/common/log"
 	"github.com/0xUnixIO/Xray-core/common/net"
@@ -263,6 +265,16 @@ func (d *DefaultDispatcher) shouldOverride(ctx context.Context, result SniffResu
 	return false
 }
 
+// bindConnUser 把当前连接绑定到已鉴权的用户，供 conntrack 按用户断连。
+// 入站未携带用户信息（如 dokodemo-door）时为空操作。
+func bindConnUser(ctx context.Context) {
+	ib := session.InboundFromContext(ctx)
+	if ib == nil || ib.User == nil || ib.User.Email == "" {
+		return
+	}
+	conntrack.BindUser(uint32(c.IDFromContext(ctx)), ib.User.Email)
+}
+
 // Dispatch implements routing.Dispatcher.
 func (d *DefaultDispatcher) Dispatch(ctx context.Context, destination net.Destination) (*transport.Link, error) {
 	if !destination.IsValid() {
@@ -281,6 +293,10 @@ func (d *DefaultDispatcher) Dispatch(ctx context.Context, destination net.Destin
 		content = new(session.Content)
 		ctx = session.ContextWithContent(ctx, content)
 	}
+
+	// 鉴权已在入站 proxy 中完成，此处把连接归属到具体用户，
+	// 使控制面可按用户强制断开存量连接（见 common/conntrack）。
+	bindConnUser(ctx)
 
 	sniffingRequest := content.SniffingRequest
 	inbound, outbound := d.getLink(ctx)
@@ -338,6 +354,11 @@ func (d *DefaultDispatcher) DispatchLink(ctx context.Context, destination net.De
 		content = new(session.Content)
 		ctx = session.ContextWithContent(ctx, content)
 	}
+
+	// 与 Dispatch 同理：鉴权已完成，把连接归属到具体用户。
+	// vless/trojan 等协议走的是这条路径。
+	bindConnUser(ctx)
+
 	outbound = WrapLink(ctx, d.policy, d.stats, outbound)
 	sniffingRequest := content.SniffingRequest
 	if !sniffingRequest.Enabled {

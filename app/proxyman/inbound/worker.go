@@ -8,6 +8,7 @@ import (
 
 	"github.com/0xUnixIO/Xray-core/common"
 	"github.com/0xUnixIO/Xray-core/common/buf"
+	"github.com/0xUnixIO/Xray-core/common/conntrack"
 	c "github.com/0xUnixIO/Xray-core/common/ctx"
 	"github.com/0xUnixIO/Xray-core/common/errors"
 	"github.com/0xUnixIO/Xray-core/common/net"
@@ -115,6 +116,10 @@ func (w *tcpWorker) callback(conn stat.Connection) {
 		Tag:     w.tag,
 		Conn:    conn,
 	})
+
+	// 追踪该连接，使控制面可按用户强制断开（用户归属由 dispatcher 鉴权后绑定）。
+	conntrack.Register(uint32(sid), cancel, conn)
+	defer conntrack.Unregister(uint32(sid))
 
 	content := new(session.Content)
 	content.SniffingRequest = w.sniffingRequest
@@ -355,6 +360,11 @@ func (w *udpWorker) callback(b *buf.Buffer, source net.Destination, originalDest
 				Gateway: net.UDPDestination(w.address, w.port),
 				Tag:     w.tag,
 			})
+			// 与 TCP 入站一致：追踪该会话，使控制面可按用户强制断开。
+			// conn.Close() 会调用 conn.cancel，故此处只需登记 conn。
+			conntrack.Register(uint32(sid), cancel, conn)
+			defer conntrack.Unregister(uint32(sid))
+
 			content := new(session.Content)
 			content.SniffingRequest = w.sniffingRequest
 			ctx = session.ContextWithContent(ctx, content)
@@ -500,6 +510,10 @@ func (w *dsWorker) callback(conn stat.Connection) {
 		Tag:     w.tag,
 		Conn:    conn,
 	})
+
+	// 与 TCP/UDP 入站一致：追踪该连接，使控制面可按用户强制断开。
+	conntrack.Register(uint32(sid), cancel, conn)
+	defer conntrack.Unregister(uint32(sid))
 
 	content := new(session.Content)
 	content.SniffingRequest = w.sniffingRequest
