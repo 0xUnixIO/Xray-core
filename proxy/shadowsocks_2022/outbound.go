@@ -4,13 +4,6 @@ import (
 	"context"
 	"time"
 
-	shadowsocks "github.com/sagernet/sing-shadowsocks"
-	"github.com/sagernet/sing-shadowsocks/shadowaead_2022"
-	C "github.com/sagernet/sing/common"
-	B "github.com/sagernet/sing/common/buf"
-	"github.com/sagernet/sing/common/bufio"
-	N "github.com/sagernet/sing/common/network"
-	"github.com/sagernet/sing/common/uot"
 	"github.com/0xUnixIO/Xray-core/common"
 	"github.com/0xUnixIO/Xray-core/common/buf"
 	"github.com/0xUnixIO/Xray-core/common/errors"
@@ -19,6 +12,13 @@ import (
 	"github.com/0xUnixIO/Xray-core/common/singbridge"
 	"github.com/0xUnixIO/Xray-core/transport"
 	"github.com/0xUnixIO/Xray-core/transport/internet"
+	shadowsocks "github.com/sagernet/sing-shadowsocks"
+	"github.com/sagernet/sing-shadowsocks/shadowaead_2022"
+	C "github.com/sagernet/sing/common"
+	B "github.com/sagernet/sing/common/buf"
+	"github.com/sagernet/sing/common/bufio"
+	N "github.com/sagernet/sing/common/network"
+	"github.com/sagernet/sing/common/uot"
 )
 
 func init() {
@@ -137,12 +137,9 @@ func (o *Outbound) Process(ctx context.Context, link *transport.Link, dialer int
 		} else if nc, isNetPacket := inboundConn.(net.PacketConn); isNetPacket {
 			packetConn = bufio.NewPacketConn(nc)
 		} else {
-			packetConn = &singbridge.PacketConnWrapper{
-				Reader: link.Reader,
-				Writer: link.Writer,
-				Conn:   inboundConn,
-				Dest:   destination,
-			}
+			wrapped, stop := singbridge.WrapPacketLink(ctx, link, destination, inboundConn)
+			defer stop()
+			packetConn = wrapped
 		}
 
 		if o.uotClient != nil {

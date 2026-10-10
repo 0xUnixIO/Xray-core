@@ -15,6 +15,7 @@ import (
 	"google.golang.org/protobuf/proto"
 
 	"github.com/0xUnixIO/Xray-core/common"
+	"github.com/0xUnixIO/Xray-core/common/buf"
 	"github.com/0xUnixIO/Xray-core/common/errors"
 	"github.com/0xUnixIO/Xray-core/common/log"
 	"github.com/0xUnixIO/Xray-core/common/net"
@@ -22,11 +23,11 @@ import (
 	"github.com/0xUnixIO/Xray-core/common/session"
 	"github.com/0xUnixIO/Xray-core/common/signal"
 	"github.com/0xUnixIO/Xray-core/common/singbridge"
+	"github.com/0xUnixIO/Xray-core/common/task"
 	"github.com/0xUnixIO/Xray-core/core"
 	"github.com/0xUnixIO/Xray-core/features/policy"
 	"github.com/0xUnixIO/Xray-core/features/routing"
 	"github.com/0xUnixIO/Xray-core/proxy"
-	"github.com/0xUnixIO/Xray-core/transport"
 	"github.com/0xUnixIO/Xray-core/transport/internet/stat"
 )
 
@@ -260,22 +261,37 @@ func (s *Server) handleStream(ctx context.Context, mu *memoryUser, sessionPolicy
 	})
 	errors.LogInfo(streamCtx, "anytls: ", mu.email, " tunnelling to ", xrayDest)
 
-	// 空闲超时：复用 Xray policy 的 ConnectionIdle 配置
-	streamCtx, cancel := context.WithCancel(streamCtx)
-	timer := signal.CancelAfterInactivity(streamCtx, cancel, sessionPolicy.Timeouts.ConnectionIdle)
-	defer timer.SetTimeout(sessionPolicy.Timeouts.DownlinkOnly)
-
 	if err := stream.HandshakeSuccess(); err != nil {
 		handshakeDone = true
 		return
 	}
 	handshakeDone = true
 
-	xConn := singbridge.NewConn(stream)
-	if err := dispatcher.DispatchLink(streamCtx, xrayDest, &transport.Link{
-		Reader: xConn,
-		Writer: xConn,
-	}); err != nil {
+	// 空闲计时必须打在自己的转发循环上。出站在另一侧拷贝，看不到这条流的字节；
+	// 只在这里武装计时器、拷贝时不 Update，活跃流也会在一个 connIdle 后被取消。
+	streamCtx, cancel := context.WithCancel(streamCtx)
+	timer := signal.CancelAfterInactivity(streamCtx, cancel, sessionPolicy.Timeouts.ConnectionIdle)
+	streamCtx = policy.ContextWithBufferPolicy(streamCtx, sessionPolicy.Buffer)
+
+	link, err := dispatcher.Dispatch(streamCtx, xrayDest)
+	if err != nil {
 		errors.LogInfoInner(streamCtx, err, "anytls: dispatch failed")
+		return
+	}
+
+	requestDone := func() error {
+		defer timer.SetTimeout(sessionPolicy.Timeouts.DownlinkOnly)
+		return buf.Copy(buf.NewReader(stream), link.Writer, buf.UpdateActivity(timer))
+	}
+	responseDone := func() error {
+		defer timer.SetTimeout(sessionPolicy.Timeouts.UplinkOnly)
+		return buf.Copy(link.Reader, buf.NewWriter(stream), buf.UpdateActivity(timer))
+	}
+	if err := task.Run(streamCtx, task.OnSuccess(requestDone, task.Close(link.Writer)), responseDone); err != nil {
+		common.Interrupt(link.Reader)
+		common.Interrupt(link.Writer)
+		if errors.Cause(err) != context.Canceled {
+			errors.LogInfoInner(streamCtx, err, "anytls: connection ends")
+		}
 	}
 }

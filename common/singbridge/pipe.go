@@ -2,80 +2,76 @@ package singbridge
 
 import (
 	"context"
-	"io"
 	"net"
-	"time"
 
-	"github.com/sagernet/sing/common/bufio"
 	"github.com/0xUnixIO/Xray-core/common"
 	"github.com/0xUnixIO/Xray-core/common/buf"
+	"github.com/0xUnixIO/Xray-core/common/session"
+	"github.com/0xUnixIO/Xray-core/common/signal"
+	"github.com/0xUnixIO/Xray-core/common/task"
+	"github.com/0xUnixIO/Xray-core/core"
+	"github.com/0xUnixIO/Xray-core/features/policy"
 	"github.com/0xUnixIO/Xray-core/transport"
 )
 
-func CopyConn(ctx context.Context, inboundConn net.Conn, link *transport.Link, serverConn net.Conn) error {
-	conn := &PipeConnWrapper{
-		W:    link.Writer,
-		Conn: inboundConn,
-	}
-	if ir, ok := link.Reader.(io.Reader); ok {
-		conn.R = ir
-	} else {
-		conn.R = &buf.BufferedReader{Reader: link.Reader}
-	}
-	return ReturnError(bufio.CopyConn(ctx, conn, serverConn))
+type timeoutOverrideKey struct{}
+
+func contextWithTimeouts(ctx context.Context, timeouts policy.Timeout) context.Context {
+	return context.WithValue(ctx, timeoutOverrideKey{}, timeouts)
 }
 
-type PipeConnWrapper struct {
-	R io.Reader
-	W buf.Writer
-	net.Conn
-}
-
-func (w *PipeConnWrapper) Close() error {
-	return nil
-}
-
-// This Read implemented a timeout to avoid goroutine leak.
-// as a temporarily solution
-func (w *PipeConnWrapper) Read(b []byte) (n int, err error) {
-	type readResult struct {
-		n   int
-		err error
+func timeoutsFrom(ctx context.Context) policy.Timeout {
+	if timeouts, ok := ctx.Value(timeoutOverrideKey{}).(policy.Timeout); ok {
+		return timeouts
 	}
-	c := make(chan readResult, 1)
-	go func() {
-		n, err := w.R.Read(b)
-		c <- readResult{n: n, err: err}
-	}()
-	select {
-	case result := <-c:
-		return result.n, result.err
-	case <-time.After(300 * time.Second):
-		common.Close(w.R)
-		common.Interrupt(w.R)
-		return 0, buf.ErrReadTimeout
-	}
-}
-
-func (w *PipeConnWrapper) Write(p []byte) (n int, err error) {
-	n = len(p)
-	var mb buf.MultiBuffer
-	pLen := len(p)
-	for pLen > 0 {
-		buffer := buf.New()
-		if pLen > buf.Size {
-			_, err = buffer.Write(p[:buf.Size])
-			p = p[buf.Size:]
-		} else {
-			buffer.Write(p)
+	if inst := core.FromContext(ctx); inst != nil {
+		if pm, ok := inst.GetFeature(policy.ManagerType()).(policy.Manager); ok && pm != nil {
+			level := uint32(0)
+			if ib := session.InboundFromContext(ctx); ib != nil && ib.User != nil {
+				level = ib.User.Level
+			}
+			return pm.ForLevel(level).Timeouts
 		}
-		pLen -= int(buffer.Len())
-		mb = append(mb, buffer)
 	}
-	err = w.W.WriteMultiBuffer(mb)
-	if err != nil {
-		n = 0
-		buf.ReleaseMulti(mb)
+	return policy.SessionDefault().Timeouts
+}
+
+// CopyConn 在入站 link 和落地连接之间双向转发。
+// 空闲时间取自 policy.connIdle，任一方向有字节都会刷新；一边结束后改用对应的单向宽限。
+// 不再使用按次 Read 的固定 300s 截止，那个截止与另一方向的流量无关。
+func CopyConn(ctx context.Context, _ net.Conn, link *transport.Link, serverConn net.Conn) error {
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
+
+	timeouts := timeoutsFrom(ctx)
+	timer := signal.CancelAfterInactivity(ctx, cancel, timeouts.ConnectionIdle)
+
+	requestDone := func() error {
+		defer timer.SetTimeout(timeouts.DownlinkOnly)
+		err := buf.Copy(link.Reader, buf.NewWriter(serverConn), buf.UpdateActivity(timer))
+		closeWrite(serverConn)
+		return err
 	}
-	return
+	responseDone := func() error {
+		defer timer.SetTimeout(timeouts.UplinkOnly)
+		return buf.Copy(buf.NewReader(serverConn), link.Writer, buf.UpdateActivity(timer))
+	}
+
+	err := task.Run(ctx, requestDone, task.OnSuccess(responseDone, task.Close(link.Writer)))
+	common.Interrupt(link.Reader)
+	common.Interrupt(link.Writer)
+	_ = serverConn.Close()
+	return ReturnError(err)
+}
+
+func closeWrite(conn net.Conn) {
+	if conn == nil {
+		return
+	}
+	type closeWriter interface {
+		CloseWrite() error
+	}
+	if cw, ok := conn.(closeWriter); ok {
+		_ = cw.CloseWrite()
+	}
 }

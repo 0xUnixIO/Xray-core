@@ -7,14 +7,6 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/sagernet/sing-shadowsocks/shadowaead_2022"
-	C "github.com/sagernet/sing/common"
-	A "github.com/sagernet/sing/common/auth"
-	B "github.com/sagernet/sing/common/buf"
-	"github.com/sagernet/sing/common/bufio"
-	E "github.com/sagernet/sing/common/exceptions"
-	M "github.com/sagernet/sing/common/metadata"
-	N "github.com/sagernet/sing/common/network"
 	"github.com/0xUnixIO/Xray-core/common"
 	"github.com/0xUnixIO/Xray-core/common/buf"
 	"github.com/0xUnixIO/Xray-core/common/errors"
@@ -26,6 +18,14 @@ import (
 	"github.com/0xUnixIO/Xray-core/common/uuid"
 	"github.com/0xUnixIO/Xray-core/features/routing"
 	"github.com/0xUnixIO/Xray-core/transport/internet/stat"
+	"github.com/sagernet/sing-shadowsocks/shadowaead_2022"
+	C "github.com/sagernet/sing/common"
+	A "github.com/sagernet/sing/common/auth"
+	B "github.com/sagernet/sing/common/buf"
+	"github.com/sagernet/sing/common/bufio"
+	E "github.com/sagernet/sing/common/exceptions"
+	M "github.com/sagernet/sing/common/metadata"
+	N "github.com/sagernet/sing/common/network"
 )
 
 func init() {
@@ -267,11 +267,8 @@ func (i *MultiUserInbound) NewPacketConnection(ctx context.Context, conn N.Packe
 	if err != nil {
 		return err
 	}
-	outConn := &singbridge.PacketConnWrapper{
-		Reader: link.Reader,
-		Writer: link.Writer,
-		Dest:   destination,
-	}
+	outConn, stop := singbridge.WrapPacketLink(ctx, link, destination, nil)
+	defer stop()
 	return bufio.CopyPacketConn(ctx, conn, outConn)
 }
 
